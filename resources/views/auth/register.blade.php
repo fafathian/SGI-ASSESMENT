@@ -75,7 +75,7 @@
                                     <label class="form-check-label" for="remember">
                                         {{ __('Sudah Punya akun? ') }}
                                     </label>
-                                    <a href="{{ route('login') }}">{{ __('Sign in') }}</a>
+                                    <a href="{{ route('login') }}">{{ __('Log in disini') }}</a>
                                 </div>
 
                                 <div class="mt-3">

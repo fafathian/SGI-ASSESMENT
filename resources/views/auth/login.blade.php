@@ -49,7 +49,7 @@
                                     <label class="form-check-label" for="remember">
                                         {{ __('Belum Punya akun? ') }}
                                     </label>
-                                    <a href="{{ route('register') }}">{{ __('Sign Up') }}</a>
+                                    <a href="{{ route('register') }}">{{ __('Daftar disini') }}</a>
                                 </div>
                                 <div class="mt-3">
                                     <button type="submit" class="btn btn-primary">

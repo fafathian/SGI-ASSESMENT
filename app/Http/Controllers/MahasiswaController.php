@@ -50,6 +50,10 @@ class MahasiswaController extends Controller
             'tanggal_lahir' => 'required|date',
             'alamat' => 'required|string',
             'jurusan' => 'required|string|max:100',
+        ], [
+            'nim.unique' => 'NIM sudah terdaftar. Gunakan NIM yang lain.',
+            'nim.required' => 'NIM wajib diisi.',
+            'nim.max' => 'NIM maksimal 20 karakter.',
         ]);
 
         Mahasiswa::create($request->all());
@@ -77,7 +81,7 @@ class MahasiswaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $mahasiswa, $id)
+    public function update(Request $request, $id)
     {
         $mahasiswa = Mahasiswa::findOrFail($id);
         $request->validate([
