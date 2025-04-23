@@ -21,5 +21,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
-Route::resource('mahasiswa', MahasiswaController::class);
+
+Route::middleware(['auth', 'session.timeout'])->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
+    Route::resource('mahasiswa', MahasiswaController::class);
+});
